@@ -34,6 +34,9 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 
+// ✅ Import your custom SensorCard
+import SensorCard from "components/SensorCard";
+
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
 
@@ -42,6 +45,7 @@ function Dashboard() {
       <DashboardNavbar />
       <MDBox py={3}>
         <Grid container spacing={3}>
+          {/* Existing statistic cards */}
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
@@ -101,7 +105,15 @@ function Dashboard() {
               />
             </MDBox>
           </Grid>
+
+          {/* ✅ New SensorCard block */}
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <SensorCard />
+            </MDBox>
+          </Grid>
         </Grid>
+
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
